@@ -1,0 +1,18 @@
+name: iri-mon
+version: 0.1.0
+
+authors:
+  - TangledIT <team@tangled.it>
+
+crystal: 0.27.2
+
+license: MIT
+
+targets:
+  iri-mon:
+    main: src/iri-mon.cr
+
+dependencies:
+  clim:
+    github: at-grandpa/clim
+    version: 0.5.0
