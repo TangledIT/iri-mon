@@ -32,6 +32,7 @@ module Iri::Mon
         return unless data["neighbors"]
         data["neighbors"].as_a.each do |neighbor|
           print "[" + neighbor["connectionType"].to_s + "] - " + neighbor["address"].to_s + "\n"
+          print "State: " + find_state(neighbor)
           print "Transactions: [all: " + neighbor["numberOfAllTransactions"].to_s + ", "
           print "new: " + neighbor["numberOfNewTransactions"].to_s + ", "
           print "invalid: " + neighbor["numberOfInvalidTransactions"].to_s + ", "
@@ -42,6 +43,17 @@ module Iri::Mon
 
       rescue e : Exception
         item("Running", false)
+      end
+    end
+
+    def find_state(neighbor)
+      if (neighbor["numberOfNewTransactions"].to_s.to_i32 +
+          neighbor["numberOfInvalidTransactions"].to_s.to_i32 +
+          neighbor["numberOfAllTransactions"].to_s.to_i32 +
+          neighbor["numberOfRandomTransactionRequests"].to_s.to_i32) == 0
+          "\033[91minactive\033[0m"
+      else
+        "\033[92mactive\033[0m"
       end
     end
 
