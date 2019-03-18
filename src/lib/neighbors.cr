@@ -32,7 +32,7 @@ module Iri::Mon
         return unless data["neighbors"]
         data["neighbors"].as_a.each do |neighbor|
           print "[" + neighbor["connectionType"].to_s + "] - " + neighbor["address"].to_s + "\n"
-          print "State: " + find_state(neighbor)
+          print "State: " + find_state(neighbor) + "\n"
           print "Transactions: [all: " + neighbor["numberOfAllTransactions"].to_s + ", "
           print "new: " + neighbor["numberOfNewTransactions"].to_s + ", "
           print "invalid: " + neighbor["numberOfInvalidTransactions"].to_s + ", "
