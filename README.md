@@ -3,11 +3,43 @@
 IRI Monitor is a command line tool for monitoring IOTA's Initial Reference Implementation (IRI).
 It allows you to identify if a node is synced and if your neighbors are active.
 
+## Contents
+
+* [Usage](#usage)
+  * [options](#options)
+  * [status](#status)
+  * [neighbors](#neighbors)
+  * [milestones](#milestones)
+  * [ports](#ports)
+* [Development](#development)
+  * [Dependencies](#dependencies)
+  * [Installation](#installation)
+* [Contributing](#contributing)
+* [Contributors](#contributors)
+
 ## Usage
 
+### Options
+Command:
+```bash
+# Help command
+./iri-mon --help
+
+# Version
+./iri-mon --version
+
+# Config file
+./iri-mon -c /path/to/iri.ini
+```
+
+### Status
+Command:
 ```bash
 ./iri-mon
+```
 
+Example result:
+```bash
 IRI Monitor - Status
 ----------------------------------------
 Version: 1.6.1-RELEASE
@@ -22,9 +54,14 @@ Tips: 429
 Transactons to request: 57
 ```
 
+### Neighbors
+Command:
 ```bash
 ./iri-mon neighbors
+```
 
+Example result:
+```bash
 IRI Monitor - Neighbors
 ----------------------------------------
 Configured neighbors: 5
@@ -36,9 +73,14 @@ Transactions: [all: 22018, new: 65, invalid: 0, stale: 12017, random requests: 1
 ...
 ```
 
+### Milestones
+Command:
 ```bash
 ./iri-mon milestones
+```
 
+Example result:
+```bash
 IRI Monitor - Milestones
 ----------------------------------------
 Start Index: 1027365
@@ -49,9 +91,14 @@ Latest Milestone: WBGORFDDLTXBZP9YOACTZLKNPTUEZN9HRQLYRNQPRLYMZGPVCIBOLELOZFUYKU
 Latest Solid Subtangle Milestone: WBGORFDDLTXBZP9YOACTZLKNPTUEZN9HRQLYRNQPRLYMZGPVCIBOLELOZFUYKUXZNTIGARLGDKHOZ9999
 ```
 
+### Ports
+Command:
 ```bash
 ./iri-mon ports
+```
 
+Example result:
+```bash
 IRI Monitor - Ports
 ----------------------------------------
 HTTP API Port: 14265
