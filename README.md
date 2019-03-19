@@ -2,6 +2,7 @@
 
 IRI Monitor is a command line tool for monitoring IOTA's Initial Reference Implementation (IRI).
 It allows you to identify if a node is synced and if your neighbors are active.
+This tool reads from the iri config file and uses the getNodeInfo and getNeighbors API calls.
 
 ## Contents
 
